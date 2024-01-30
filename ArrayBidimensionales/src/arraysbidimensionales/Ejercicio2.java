@@ -10,19 +10,21 @@ public class Ejercicio2 {
 		Scanner sc = new Scanner(System.in);
 
 		int[][] tabla = new int[4][5];
+		double media = 0;
 
 		for (int fila = 0; fila < 4; fila++) {
+
 			for (int columna = 0; columna < 5; columna++) {
 				System.out.println("Introduce la nota " + (columna + 1) + " del alumno " + (fila + 1) + " --> ");
 				tabla[fila][columna] = sc.nextInt();
+
 			}
 		}
-		
 
 		for (int[] fila : tabla) {
 			for (int valor : fila) {
 				System.out.print(valor + "\t");
-				
+
 			}
 			System.out.println();
 		}
@@ -38,7 +40,13 @@ public class Ejercicio2 {
 			System.out.println("Alumno " + (fila + 1));
 			System.out.println("Nota minima --> " + notaMin);
 			System.out.println("Nota maxima --> " + notaMax);
-
+			media = 0;
+			
+			for (int columna = 0; columna < 5; columna++) {
+				media += tabla[fila][columna];
+				
+			}
+			System.out.println("Nota media --> " + (media / 5));
 		}
 
 		sc.close();
